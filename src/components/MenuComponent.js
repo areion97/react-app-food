@@ -1,7 +1,8 @@
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle } from 'reactstrap';
 import {Component} from "react";
-
+import HomePage from './Home';
+import { Routes , Route, Navigate} from 'react-router-dom';
 class Menu extends Component {
 
     constructor(props) {
@@ -49,8 +50,9 @@ class Menu extends Component {
         });
 
         return (
-            <div className="container">
-                <div className="row">
+         
+            <div className="container">    
+              <div className="row">
                     {menu}
                 </div>
                 <div className="row">

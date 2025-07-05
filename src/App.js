@@ -2,8 +2,13 @@ import './App.css';
 import {Component} from "react";
 import Menu from './components/MenuComponent';
 import { DISHES } from './shared/dishes';
-import {Navbar, NavbarBrand} from "reactstrap";
-
+import HomePage from './components/Home';
+import About from './components/AboutComponent';
+import { LEADERS } from './shared/leaders';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { Routes, Route, Navigate } from 'react-router-dom';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -14,12 +19,20 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Navbar dark color="primary">
-                    <div className="container">
-                        <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-                    </div>
-                </Navbar>
-                <Menu dishes={this.state.dishes}/>
+                <BrowserRouter>
+                <Header />
+         
+              <Routes>
+                  <Route path='/home' element={HomePage} />
+                  <Route path='/menu' element={<Menu dishes={this.state.dishes} />} />
+                  <Route path='/aboutus' element={<About leaders={LEADERS} />} />
+
+               </Routes>
+
+                    <Footer />
+
+                </BrowserRouter>
+
             </div>
 
         );
