@@ -8,7 +8,7 @@ import { LEADERS } from './shared/leaders';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -22,12 +22,12 @@ class App extends Component {
                 <BrowserRouter>
                 <Header />
          
-              <Routes>
+              <Switch>
                   <Route path='/home' element={HomePage} />
                   <Route path='/menu' element={<Menu dishes={this.state.dishes} />} />
                   <Route path='/aboutus' element={<About leaders={LEADERS} />} />
 
-               </Routes>
+               </Switch>
 
                     <Footer />
 

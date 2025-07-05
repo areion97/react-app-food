@@ -2,7 +2,7 @@ import {
     Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle
 } from 'reactstrap';
 import {Component} from "react";
-
+import CommentForm from './CommentForm';
 class DishDetail extends Component {
 
     constructor(props) {
@@ -73,6 +73,7 @@ class DishDetail extends Component {
                         <ul className="list-unstyled">
                             {this.renderComments(this.state.dish.comments)}
                         </ul>
+                        <CommentForm />
 
                     </div>
 
