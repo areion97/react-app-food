@@ -23,9 +23,9 @@ class App extends Component {
                 <Header />
          
               <Switch>
-                  <Route path='/home' element={HomePage} />
-                  <Route path='/menu' element={<Menu dishes={this.state.dishes} />} />
-                  <Route path='/aboutus' element={<About leaders={LEADERS} />} />
+                  <Route path='/home' render={()=>HomePage} />
+                  <Route path='/menu' render={()=><Menu dishes={this.state.dishes} />} />
+                  <Route path='/aboutus' render={()=><About leaders={LEADERS} />} />
 
                </Switch>
 
